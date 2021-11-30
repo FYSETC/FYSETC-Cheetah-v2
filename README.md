@@ -119,7 +119,7 @@ You have two code source choices
 
 ##### Source 1
 
-You can get Marlin code is in the `firmware/Marlin` folder in this repository [github](https://github.com/FYSETC/FYSETC-Cheetah/tree/master/firmware/Marlin) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah/tree/master/firmware/Marlin). 
+You can get Marlin code is in the `firmware/Marlin` folder in this repository [github](https://github.com/FYSETC/FYSETC-Cheetah-v2/tree/main/firmware/Marlin) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah-v2/tree/main/firmware/Marlin). 
 
 ##### Source 2
 
@@ -144,7 +144,7 @@ And serial port
 
 ##### Change configuration
 
-You need to modify your `configuration.h` and `configuration_adv.h` according to your machine. You'd better change your configuration base on the configuration in github [cheetah v1.1](https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah)/[cheetah v1.2](https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah%201.2) or gitee [cheetah v1.1](https://gitee.com/fysetc/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah)/[cheetah v1.2](https://gitee.com/fysetc/Configurations/tree/import-2.0.x/config/examples/Creality/Ender-3/FYSETC%20Cheetah%201.2). Then you can compile the firmware now.
+You need to modify your `configuration.h` and `configuration_adv.h` according to your machine. Then you can compile the firmware.
 
 #### 5.1.3 Compile the firmware
 
