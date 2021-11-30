@@ -241,12 +241,12 @@ https://www.st.com/zh/development-tools/stm32cubeprog.html
 
 Open the STM32CubeProgrammer software.
 
-![1574332767079](images\cx.png)
+![1574332767079](images/cx.png)
 
 #### Step 2. Enter DFU mode
 
 1. First power off the board
-2. Place jumper on BT0 and 3.3V pin![image-20211130182000593](images\boot_jumper.png) 
+2. Place jumper on BT0 and 3.3V pin![image-20211130182000593](images/boot_jumper.png) 
 4. Connect USB cable to the board and your computer 
 5. Power up the board with 24v 
 
@@ -258,7 +258,7 @@ Now the board is in DFU mode.
 
 Now you can connect and flash the Spider board with stm32cubeprogrammer with the following operation.
 
-![1574386395071](images\c2.png)
+![1574386395071](images/c2.png)
 
 Do as the red number shows in the screen shot.
 
