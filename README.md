@@ -171,6 +171,8 @@ make
 
 Then follow the Firmware Upload section below the upload the firmware.
 
+I made the PR for Klipper of `Cheetah v2.0` config, you can check it [here](https://github.com/Klipper3d/klipper/pull/4934).
+
 ## 5.3  <span id="jump0">Firmware Upload</span>
 
 We provide several ways to upload the firmware .
