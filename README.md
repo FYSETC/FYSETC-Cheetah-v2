@@ -192,7 +192,7 @@ This method works in linux, that means should work in raspberry pi.
 1. Enter DFU mode first
 
    - First power off the board
-   - Place jumper on BT0 and 3.3V pin![image-20211130182000593](images\boot_jumper.png) 
+   - Place jumper on BT0 and 3.3V pin![image-20211130182000593](images/boot_jumper.png) 
    - Connect USB cable to the board and your computer 
    - Power up the board with 24v 
 
