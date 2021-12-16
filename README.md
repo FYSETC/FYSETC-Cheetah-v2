@@ -86,14 +86,26 @@ Coming soon...
    <tr><td>Heated-Bed</td><td>PC7</td><td>38</td><td></td></tr>
    <tr><td rowspan="2">Temperature</td><td>TE0</td><td>PC4</td><td>24</td><td></td></tr>
    <tr><td>TB</td><td>PC5</td><td>25</td><td></td></tr>
-   <tr><td rowspan="8">EXP1</td><td>BEEP</td><td>PC9</td><td>40</td><td></td></tr>
-   <tr><td>BTN_ENC</td><td>PC12</td><td>53</td><td></td></tr>
-   <tr><td>BTN_EN2</td><td>PC11</td><td>52</td><td></td></tr>
-   <tr><td>MISO</td><td>PA6</td><td>22</td><td></td></tr>
+   <tr><td rowspan="10">EXP1</td><td>SD-MISO</td><td>PA6</td><td>22</td><td></td></tr>
+   <tr><td>SD-SCK</td><td>PA5</td><td>21</td><td></td></tr>
    <tr><td>BTN_EN1</td><td>PC10</td><td>51</td><td></td></tr>
-   <tr><td>SCK</td><td>PA5</td><td>21</td><td></td></tr>
-   <tr><td>CS</td><td>PA4</td><td>20</td><td></td></tr>
-   <tr><td>MOSI</td><td>PA7</td><td>23</td><td></td></tr>
+   <tr><td>SD-SS</td><td>PA4</td><td>20</td><td></td></tr>
+   <tr><td>BTN_EN2</td><td>PC11</td><td>52</td><td></td></tr>
+   <tr><td>SD-MOSI</td><td>PA5</td><td>21</td><td></td></tr>
+   <tr><td>SD-DET</td><td>PC3</td><td>11</td><td></td></tr>
+   <tr><td>RESET</td><td>NRST</td><td>7</td><td></td></tr>
+   <tr><td>GND</td><td>GND</td><td>NA</td><td></td></tr>
+   <tr><td>5V</td><td>5V</td><td>NA</td><td></td></tr>
+   <tr><td rowspan="10">EXP2</td><td>BEEP</td><td>PC9</td><td>40</td><td></td></tr>
+   <tr><td>BTN_ENC</td><td>PC12</td><td>53</td><td></td></tr>
+   <tr><td>LCD_EN</td><td>PB15</td><td>36</td><td></td></tr>
+   <tr><td>LCD_RS</td><td>PB12</td><td>33</td><td></td></tr>
+   <tr><td>LCD_D4</td><td>PB13</td><td>34</td><td></td></tr>
+   <tr><td>LCD_D5</td><td>PB14</td><td>35</td><td></td></tr>
+   <tr><td>LCD_D6</td><td>PB6</td><td>58</td><td></td></tr>
+   <tr><td>LCD_D7</td><td>PB7</td><td>59</td><td></td></tr>
+   <tr><td>GND</td><td>GND</td><td>NA</td><td></td></tr>
+   <tr><td>5V</td><td>5V</td><td>NA</td><td></td></tr>
    <tr><td rowspan="2">UART</td><td>TX</td><td>PA9/TX1</td><td>42</td><td></td></tr>
    <tr><td>RX</td><td>PA10/RX1</td><td>43</td><td></td></tr>
    <tr><td rowspan="2">I2C</td><td>I2C2 SCL</td><td>PB10</td><td>29</td><td></td></tr>
