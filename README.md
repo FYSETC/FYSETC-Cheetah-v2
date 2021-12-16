@@ -242,6 +242,8 @@ This method works in linux, that means should work in raspberry pi.
    ```
    dfu-util -R -a 0 -s 0x08008000:leave -D firmware.bin
    ```
+   
+5. Remove boot jumper and power-off then power on the board. 
 
 ### 5.3.3 <span id="jump">Upload the firmware(WINDOWS DFU)</span>
 
@@ -281,6 +283,7 @@ Do as the red number shows in the screen shot.
 3. Choose the "firmware.bin" file.
 4. Fill in the 'Start address' with `0x08008000` (If you use Marlin). If you use Klipper and you choose no boot address on menuconfig when you compile Klipper, then set it `0x08000000`.
 5. Start Programming
+5. Remove boot jumper and power-off then power on the board. 
 
 ## 6. FAQ
 

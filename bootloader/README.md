@@ -47,6 +47,7 @@ Do as the red number shows in the screen shot.
 4. Connect the DFU 
 5. Choose the `FYSETC-BOOTLOADER-CHEETAH_V2.hex` file.
 6. Start Programming
+6. Remove boot jumper and power-off then power on the board. 
 
 ## 2 Tech Support
 
