@@ -35,6 +35,7 @@
 //#define BOGUS_TEMPERATURE_GRACE_PERIOD    2000
 
 #if EITHER(NO_EEPROM_SELECTED, FLASH_EEPROM_EMULATION)
+  //#define SDCARD_EEPROM_EMULATION
   #define FLASH_EEPROM_EMULATION
   #define FLASH_EEPROM_LEVELING
 
@@ -113,7 +114,8 @@
 #ifndef FAN_PIN
   #define FAN_PIN                           PA14
 #endif
-#define FAN1_PIN                            PC8
+#define FAN1_PIN                            PA13
+#define FAN2_PIN                            PA1
 
 //
 // Temperature Sensors
@@ -126,16 +128,6 @@
 //
 #define SDSS                                PA4
 #define SD_DETECT_PIN                       PC3
-
-#ifndef RGB_LED_R_PIN
-  #define RGB_LED_R_PIN                     PB0
-#endif
-#ifndef RGB_LED_G_PIN
-  #define RGB_LED_G_PIN                     PB7
-#endif
-#ifndef RGB_LED_B_PIN
-  #define RGB_LED_B_PIN                     PB6
-#endif
 
 /**
  *                -----                                              -----

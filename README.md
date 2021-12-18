@@ -76,8 +76,8 @@ Coming soon...
    <tr><td rowspan="2">TMC2209 SERIAL (UART2)</td><td>TX2</td><td>PA2</td><td>16</td><td></td></tr>
    <tr><td>RX2</td><td>PA3</td><td>17</td><td></td></tr>
    <tr><td rowspan="3">End-stops</td><td>X-MIN</td><td>PB4</td><td>56</td><td></td></tr>
-   <tr><td>Y-MIN</td><td>PB3</td><td>55</td><td></td></tr>
-   <tr><td>Z-MIN</td><td>PC2</td><td>10</td><td></td></tr>
+   <tr><td>Y-MIN</td><td>PC8</td><td>39</td><td></td></tr>
+   <tr><td>Z-MIN</td><td>PB1</td><td>27</td><td></td></tr>
    <tr><td rowspan="3">FAN</td><td>FAN0</td><td>PA14</td><td>49</td><td></td></tr>
    <tr><td>FAN1</td><td>PA13</td><td>46</td><td></td></tr>
    <tr><td>FAN2</td><td>PA1</td><td>15</td><td></td></tr>
