@@ -113,8 +113,6 @@ Coming soon...
    <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>PA13</td><td>46</td><td>only used for debugging now and can be used for other purposes.</td></tr>
    <tr><td>SWCLK</td><td>PA14</td><td>49</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
-
-
 ## 5. Firmware 
 
 ### 5.1 Marlin
@@ -281,7 +279,7 @@ Do as the red number shows in the screen shot.
 1. Click the button to find the DFU port.
 2. Connect the DFU 
 3. Choose the "firmware.bin" file.
-4. Fill in the 'Start address' with `0x08008000` (If you use Marlin). If you use Klipper and you choose no boot address on menuconfig when you compile Klipper, then set it `0x08000000`.
+4. If your firmware is `.hex` file, skip this step. Fill in the 'Start address' with `0x08008000` (If you use Marlin). If you use Klipper and you choose no boot address on menuconfig when you compile Klipper, then set it `0x08000000`.
 5. Start Programming
 5. Remove boot jumper and power-off then power on the board. 
 
