@@ -20,7 +20,7 @@ https://www.st.com/zh/development-tools/stm32cubeprog.html
 
 Open the STM32CubeProgrammer software.
 
-![1574332767079](..\images\cx.png)
+![1574332767079](../images/cx.png)
 
 #### Step 2. Enter DFU mode
 

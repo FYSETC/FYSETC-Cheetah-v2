@@ -192,7 +192,7 @@ We provide several ways to upload the firmware .
 
 *If you use Klipper firmware with `No bootloader` option, you can't use this method.* 
 
-Uploading firmware using SD card is our default way to update the firmware as `Cheetah v2.0` already has the `bootloader` on it when it leave the factory. But if you once upload the firmware to `Cheetah v2.0` flash address `0x08000000`, then the bootloader in `Cheetah v2.0` will be gone, then you need to upload the bootloader to `Cheetah v2.0` yourself, please follow the README in bootloader folder ([github](https://github.com/FYSETC/FYSETC-SPIDER/tree/main/bootloader) or [gitee](https://gitee.com/fysetc/FYSETC-SPIDER/tree/main/bootloader)) to upload the bootloader.
+Uploading firmware using SD card is our default way to update the firmware as `Cheetah v2.0` already has the `bootloader` on it when it leave the factory. But if you once upload the firmware to `Cheetah v2.0` flash address `0x08000000`, then the bootloader in `Cheetah v2.0` will be gone, then you need to upload the bootloader to `Cheetah v2.0` yourself, please follow the README in bootloader folder ([github](https://github.com/FYSETC/FYSETC-Cheetah-v2/tree/main/bootloader) or [gitee](https://gitee.com/fysetc-mirrors/FYSETC-Cheetah-v2/tree/main/bootloader)) to upload the bootloader.
 
 ##### How to upload firmware with bootloader
 
@@ -228,7 +228,7 @@ This method works in linux, that means should work in raspberry pi.
    sudo apt-get install dfu-util
    ```
 
-2. Power off board, remove SD Card, place jumper on BT0 and 3.3V. (Between Z- endstop and E0 driver) Connect Spider to PC/RaspberryPi with USB cable with jumper in place. Set U5V jumper closest to stepper driver modules to power Spider from the Pi USB, or power up with 24V. Verify 3.3V LED is lit and board is detected with `dfu-util --list`, should look something like
+2. Power off board, remove SD Card, place jumper on BT0 and 3.3V. (Between Z- endstop and E0 driver) Connect Cheetah v2 to PC/RaspberryPi with USB cable with jumper in place. Set U5V jumper closest to stepper driver modules to power Cheetah v2 from the Pi USB, or power up with 24V. Verify 3.3V LED is lit and board is detected with `dfu-util --list`, should look something like
 
    ```
    <snip>
@@ -271,7 +271,7 @@ Now the board is in DFU mode.
 
 #### Step 3. Upload the firmware
 
-Now you can connect and flash the Spider board with stm32cubeprogrammer with the following operation.
+Now you can connect and flash the Cheetah board with stm32cubeprogrammer with the following operation.
 
 ![1574386395071](images/c2.png)
 
