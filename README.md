@@ -169,9 +169,13 @@ If everything goes fine , at the bottom you can see several buttons
 
 Just click check mark to compile. 
 
-### 5.2 Klipper
+#### 5.1.4 Upload the firmware
 
-Till now(2021/11/30), Klipper don't have boot offset setting for STM32F401 chip, so we use `no Bootloader` option first.
+Follow the instruction [here](#jump0).
+
+### <span id="jump52">5.2 Klipper</span>
+
+Till now(2021/11/30), Klipper don't have boot offset setting for STM32F401 chip, so we use `no Bootloader` option first. (If you want still want to use Cheetah bootloader, you can change the code following the PR [here](https://github.com/Klipper3d/klipper/pull/5155), then use `32KiB bootloader` option).
 
 ![](images/menuconfig.png)
 
@@ -180,17 +184,17 @@ make clean
 make
 ````
 
-Then follow the Firmware Upload section below the upload the firmware.
+Then follow the Firmware Upload section instruction below to upload the firmware.
 
 I made the PR for Klipper of `Cheetah v2.0` config, you can check it [here](https://github.com/Klipper3d/klipper/pull/4934).
 
-## 5.3  <span id="jump0">Firmware Upload</span>
+### 5.3  <span id="jump0">Firmware Upload</span>
 
-We provide several ways to upload the firmware .
+We provide several ways to upload the firmware.
 
-### 5.3.1 <span id="jump1">Upload the firmware(SDCARD)</span>
+#### 5.3.1 <span id="jump1">Upload the firmware(SDCARD)</span>
 
-*If you use Klipper firmware with `No bootloader` option, you can't use this method.* 
+*If you use Klipper firmware with `No bootloader` option, you can't use this method. This method only works with bootloader.* 
 
 Uploading firmware using SD card is our default way to update the firmware as `Cheetah v2.0` already has the `bootloader` on it when it leave the factory. But if you once upload the firmware to `Cheetah v2.0` flash address `0x08000000`, then the bootloader in `Cheetah v2.0` will be gone, then you need to upload the bootloader to `Cheetah v2.0` yourself, please follow the README in bootloader folder ([github](https://github.com/FYSETC/FYSETC-Cheetah-v2/tree/main/bootloader) or [gitee](https://gitee.com/fysetc-mirrors/FYSETC-Cheetah-v2/tree/main/bootloader)) to upload the bootloader.
 
@@ -198,7 +202,7 @@ Uploading firmware using SD card is our default way to update the firmware as `C
 
 Copy your compiled firmware file ```firmware.bin```(If you use klipper firmware, you need to rename `klipper.bin` to `firmware.bin`) file to the SD card , and insert it to the SD card slot which is at the right side of the board, and then power up the board. You may need to wait for about 30s to finish uploading. When finished firmware name will change to `old.bin`. 
 
-### 5.3.2 <span id="jump4">Upload the firmware(dfu-util)</span>
+#### 5.3.2 <span id="jump4">Upload the firmware(dfu-util)</span>
 
 This method works in linux, that means should work in raspberry pi.
 
@@ -209,7 +213,7 @@ This method works in linux, that means should work in raspberry pi.
    - Connect USB cable to the board and your computer 
    - Power up the board with 24v 
 
-1. Make sure dfu-util is installed, shoot `dfu-util --version` command to check.
+2. Make sure dfu-util is installed, shoot `dfu-util --version` command to check.
 
    Sample output:
 
@@ -228,15 +232,7 @@ This method works in linux, that means should work in raspberry pi.
    sudo apt-get install dfu-util
    ```
 
-2. Power off board, remove SD Card, place jumper on BT0 and 3.3V. (Between Z- endstop and E0 driver) Connect Cheetah v2 to PC/RaspberryPi with USB cable with jumper in place. Set U5V jumper closest to stepper driver modules to power Cheetah v2 from the Pi USB, or power up with 24V. Verify 3.3V LED is lit and board is detected with `dfu-util --list`, should look something like
-
-   ```
-   <snip>
-   Found DFU: [0483:df11] ver=2200, devnum=13, cfg=1, intf=0, path="1-1.3", alt=3, name="@Device Feature/0xFFFF0000/01*004 e", serial="STM32FxSTM32"
-   Found DFU:<snip>
-   ```
-
-3. You should replace `firmware.bin` below with your built firmware bin file location like `out/klipper.bin`. At the moment(2021/11/30), Klipper don't have boot offset setting when you compile, so change the following offset address `0x08008000` to `0x08000000` if you use Klipper firmware.
+3. Then use the command below to upload the firmware. You should replace `firmware.bin` below with your built firmware bin file location like `out/klipper.bin`. Change flash address `0x08008000` to bootloader you choosed. (If you use Marlin firmware, you need to set it to `0x08008000`. If you use klipper firmware and you choose boot address `32kiB bootloader` (decribe  [here](#jump52)) when compiling klipper then set it `0x08008000`, if `no Bootloader` , set it `0x08000000`.)
 
    ```
    dfu-util -R -a 0 -s 0x08008000:leave -D firmware.bin
@@ -244,11 +240,11 @@ This method works in linux, that means should work in raspberry pi.
    
 5. Remove boot jumper and power-off then power on the board. 
 
-### 5.3.3 <span id="jump">Upload the firmware(WINDOWS DFU)</span>
+#### 5.3.3 <span id="jump">Upload the firmware(WINDOWS DFU)</span>
 
 The other way to upload the firmware is using DFU.
 
-#### Step 1. Download stm32cubeprogrammer 
+##### Step 1. Download stm32cubeprogrammer 
 
 You can download it from ST website.
 
@@ -258,7 +254,7 @@ Open the STM32CubeProgrammer software.
 
 ![1574332767079](images/cx.png)
 
-#### Step 2. Enter DFU mode
+##### Step 2. Enter DFU mode
 
 1. First power off the board
 2. Place jumper on BT0 and 3.3V pin![image-20211130182000593](images/boot_jumper.png) 
@@ -269,7 +265,7 @@ Now the board is in DFU mode.
 
 ***REMEMBER to remove the jumper if you finish uploading firmware or it will enter DFU mode again.***
 
-#### Step 3. Upload the firmware
+##### Step 3. Upload the firmware
 
 Now you can connect and flash the Cheetah board with stm32cubeprogrammer with the following operation.
 
@@ -280,9 +276,24 @@ Do as the red number shows in the screen shot.
 1. Click the button to find the DFU port.
 2. Connect the DFU 
 3. Choose the "firmware.bin" file.
-4. If your firmware is `.hex` file, skip this step. Fill in the 'Start address' with `0x08008000` (If you use Marlin). If you use Klipper and you choose no boot address on menuconfig when you compile Klipper, then set it `0x08000000`.
+4. If your firmware is `.hex` file, skip this step. Fill in the 'Start address' with (If you use Marlin, set it `0x08008000`. If you use Klipper firmware and you choose boot address `32kiB bootloader` (decribe [here](#jump52)) when compiling klipper then set it `0x08008000`, if `no Bootloader` , set it `0x08000000`.)
 5. Start Programming
 5. Remove boot jumper and power-off then power on the board. 
+
+#### 5.3.4 Upload firmware(platformio)
+
+If you compile Marlin yourself with platformio,you can follow the instructions below to upload the firmware.
+
+##### Step 1. Enter DFU mode first
+
+- First power off the board
+- Place jumper on BT0 and 3.3V pin![image-20211130182000593](images/boot_jumper.png) 
+- Connect USB cable to the board and your computer 
+- Power up the board with 24v 
+
+##### Step 2. Click the upload button to upload firmware
+
+![](images\platformio_upload.png)
 
 ## 6. FAQ
 
