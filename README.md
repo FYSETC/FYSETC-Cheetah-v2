@@ -79,6 +79,7 @@ Coming soon...
    <tr><td rowspan="3">End-stops</td><td>X-MIN</td><td>PB4</td><td>56</td><td></td></tr>
    <tr><td>Y-MIN</td><td>PC8</td><td>39</td><td></td></tr>
    <tr><td>Z-MIN</td><td>PB1</td><td>27</td><td></td></tr>
+   <tr><td rowspan="1">PWM</td><td>BLTOUCH/PROBE</td><td>PA0</td><td>14</td><td></td></tr>
    <tr><td rowspan="3">FAN</td><td>FAN0</td><td>PA14</td><td>49</td><td></td></tr>
    <tr><td>FAN1</td><td>PA13</td><td>46</td><td></td></tr>
    <tr><td>FAN2</td><td>PA1</td><td>15</td><td></td></tr>
@@ -114,6 +115,7 @@ Coming soon...
    <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>PA13</td><td>46</td><td>only used for debugging now and can be used for other purposes.</td></tr>
    <tr><td>SWCLK</td><td>PA14</td><td>49</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
+
 ## 5. Firmware 
 
 ### 5.1 Marlin
