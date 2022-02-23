@@ -120,48 +120,56 @@ Coming soon...
 
 ### 5.1 Marlin
 
-Follow the steps below to compile the firmware yourself. More information [here](https://marlinfw.org/docs/basics/auto_build_marlin.html).
+Follow the steps below to compile the firmware yourself. You can learn more on Marlin official website [here](https://marlinfw.org/docs/basics/auto_build_marlin.html).
 
 #### 5.1.1 Download Vscode + platformio
 
 To compile the firmware , you need to install Visual Studio Code and the platformio pulg-in.
 
-#### 5.1.2 Firmware config
+#### 5.1.2 Config firmware
 
-You have two code source choices
+##### Step 1: Get marlin code
 
-##### Source 1
+You have two choices to get Marlin code.
 
-You can get Marlin code is in the `firmware/Marlin` folder in this repository [github](https://github.com/FYSETC/FYSETC-Cheetah-v2/tree/main/firmware/Marlin) or [gitee](https://gitee.com/fysetc/FYSETC-Cheetah-v2/tree/main/firmware/Marlin). 
+Choice 1
 
-##### Source 2
+You can get Marlin code in the `firmware/Marlin` folder in this repository ( [github](https://github.com/FYSETC/FYSETC-Cheetah-v2/tree/main/firmware/Marlin) [gitee](https://gitee.com/fysetc/FYSETC-Cheetah-v2/tree/main/firmware/Marlin) ). 
 
-Also you can get upstream branch from [github](https://github.com/MarlinFirmware/Marlin) or [gitee](https://gitee.com/fysetc/Marlin) (You'd better use the bugfix-2.0.x version as i just make [PR](https://github.com/MarlinFirmware/Marlin/pull/23104)  2021/10/10, so Marlin group may not integrate the code in formal version). Remember to change `default_envs` in `platformio.ini` file.
+Choice 2
+
+Also you can get upstream Marlin official branch from [github](https://github.com/MarlinFirmware/Marlin) or [gitee](https://gitee.com/fysetc/Marlin).
+
+##### Step 2: Change motherboard related configurations.
+
+In marlin firmware you have downloaded, you should find `platformio.ini` , `configuration.h` and `configuration_adv.h` file.
+
+1. First we need to change `default_envs` in `platformio.ini` file.
 
 ```
 default_envs = FYSETC_CHEETAH_V20
 ```
 
-And change `MOTHERBOARD` define according to your cheetah board version in `Configuration.h`
+2. Change `MOTHERBOARD` define in `Configuration.h`
 
 ```
 #define MOTHERBOARD BOARD_FYSETC_CHEETAH_V20
 ```
 
-And serial port
+3. Change Serial port define in `Configuration.h`
 
 ```
 #define SERIAL_PORT -1
 #define BAUDRATE 115200
 ```
 
-##### Change configuration
+##### Step 3: Change other configurations
 
-You need to modify your `configuration.h` and `configuration_adv.h` according to your machine. Then you can compile the firmware.
+Except the motherboard related configurations, you still need to set like machine size and print speed and others configurations in `configuration.h`, and `configuration_adv.h`. And you can find machine related example configurations on Marlin github [here](https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples) which you can refer to.
 
 #### 5.1.3 Compile the firmware
 
-Open Vscode and open platformio main page and click the "Open Project" button , and direct to the folder where you put your firmware.
+Once you finish setting the firmware, we can try to compile the firmware. Open Vscode and open platformio main page and click the "Open Project" button , and direct to the folder where you put your firmware.
 
 ![1561099422559](images/f1.png)
 
