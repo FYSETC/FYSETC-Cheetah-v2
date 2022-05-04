@@ -93,7 +93,7 @@ Coming soon...
    <tr><td>BTN_EN1</td><td>PC10</td><td>51</td><td></td></tr>
    <tr><td>SD-SS</td><td>PA4</td><td>20</td><td></td></tr>
    <tr><td>BTN_EN2</td><td>PC11</td><td>52</td><td></td></tr>
-   <tr><td>SD-MOSI</td><td>PA5</td><td>21</td><td></td></tr>
+   <tr><td>SD-MOSI</td><td>PA7</td><td>23</td><td></td></tr>
    <tr><td>SD-DET</td><td>PC3</td><td>11</td><td></td></tr>
    <tr><td>RESET</td><td>NRST</td><td>7</td><td></td></tr>
    <tr><td>GND</td><td>GND</td><td>NA</td><td></td></tr>
@@ -115,6 +115,7 @@ Coming soon...
    <tr><td rowspan="3">SWD Debug</td><td>SWDIO</td><td>PA13</td><td>46</td><td>only used for debugging now and can be used for other purposes.</td></tr>
    <tr><td>SWCLK</td><td>PA14</td><td>49</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
+
 
 ## 5. Firmware 
 
