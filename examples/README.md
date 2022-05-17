@@ -10,3 +10,6 @@ Details check [github](https://github.com/FYSETC/FYSETC-Voron-0/tree/main/Firmwa
 
 Check the README in folder `Ender-3`.
 
+## Creality CR-10
+
+Check the README in folder `CR-10`.
