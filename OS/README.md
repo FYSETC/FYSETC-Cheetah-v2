@@ -2,7 +2,7 @@
 
 ## SAMFi-OS_OrangePi_zero
 
-Before you config the SAMF-OS_OrangePi-zero. You need an TF card with at least 8G capacity. 
+Before you config the [SAMF-OS_OrangePi_zero](https://github.com/FYSETC/FYSETC-SAMFi-OS). You need an TF card with at least 8G capacity. 
 
 ### Step 1
 
