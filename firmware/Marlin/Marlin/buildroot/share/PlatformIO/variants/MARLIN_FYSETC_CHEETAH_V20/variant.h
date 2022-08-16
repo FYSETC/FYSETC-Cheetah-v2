@@ -96,7 +96,7 @@ extern "C" {
 
 // Timer Definitions
 #define TIMER_TONE              TIM2
-#define TIMER_SERVO             TIM5
+#define TIMER_SERVO             TIM3
 #define TIMER_SERIAL            TIM11
 
 // UART Definitions

@@ -47,25 +47,27 @@
 //
 // Z Probe
 //
-#if ENABLED(BLTOUCH)
-  #define SERVO0_PIN                        PB5
-#elif !defined(Z_MIN_PROBE_PIN)
-  #define Z_MIN_PROBE_PIN                   PA0
-#endif
+#define SERVO0_PIN                          PB1 // Z-MIN for BLTOUCH SIG
 
 //
 // Limit Switches
 //
 #define X_STOP_PIN                          PB4
 #define Y_STOP_PIN                          PC8
-#define Z_STOP_PIN                          PB1
+#if NUM_SERVOS>0
+  #define Z_STOP_PIN                        PA0 // PROBE pin for BLTOUCH Z-MIN
+#else
+  #define Z_STOP_PIN                        PB1 // Z-MIN
+#endif
+
+#ifndef Z_MIN_PROBE_PIN
+  #define Z_MIN_PROBE_PIN                   PA0
+#endif
 
 //
 // Filament runout
 //
-#if ENABLED(BLTOUCH)
-  #define FIL_RUNOUT_PIN                    PA0
-#endif
+#define FIL_RUNOUT_PIN                      PB5
 
 //
 // Steppers
