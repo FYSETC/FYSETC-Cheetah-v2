@@ -133,6 +133,10 @@ sensor_pin: ^PA0
 control_pin: PB1
 ```
 
+### 4.4.2 VORON 0.1 wiring
+
+Please refer to our VORON 0.1 kit wiring here( [github](https://github.com/FYSETC/FYSETC-Voron-0#52-rev11-kit) or [国内](http://git.t.ecoaas.com/FYSETC/FYSETC-Voron-0#52-rev11-kit))
+
 ## 5. Firmware
 
 ### 5.1 Marlin
