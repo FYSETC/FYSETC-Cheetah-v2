@@ -37,29 +37,32 @@ Cheetah 2.0 is a single-head main control board based on STM32F401, with 4 TMC22
 
 ### 4.1 Hardware Reasources
 
-| Board Name           | Cheetah v2.0                                         |
-| -------------------- | ------------------------------------------------ |
-| License              | GPL V2.0                                       |
-| Latest Version       | V2.0                                           |
-| Extruders            | 1                                                |
-| Controlled Fans      | 3 Max                                            |
-| Heaters              | 2 Max                                            |
-| Endstops             | 3 Max                                            |
-| Temp sens            | 2 Max                                            |
-| UART | 1 |
-| I2C                  | 1                                                |
-| SWD                  | 1                                                |
-| USB   | 1                                            |
-| CPU                  | STM32F401                                  |
-| CPU Speed ( MHz )    | 84 Mhz                                       |
-| Stepper driver       | 4X TMC2209 |
-| Stepper driver Type              | Onboard               |
-| Input| 12v/24v |
-| Output| BED OUT：10A Max ；Heater Out：5A Max            |
+| Board Name          | Cheetah v2.0                       |
+| ------------------- | ---------------------------------- |
+| License             | GPL V2.0                           |
+| Latest Version      | V2.0                               |
+| Extruders           | 1                                  |
+| Controlled Fans     | 3 Max                              |
+| Heaters             | 2 Max                              |
+| Endstops            | 3 Max                              |
+| Temp sens           | 2 Max                              |
+| UART                | 1                                  |
+| I2C                 | 1                                  |
+| SWD                 | 1                                  |
+| USB                 | 1                                  |
+| CPU                 | STM32F401                          |
+| CPU Speed ( MHz )   | 84 Mhz                             |
+| Stepper driver      | 4X TMC2209                         |
+| Stepper driver Type | Onboard                            |
+| Input               | 12v/24v                            |
+| Output              | BED OUT：10A Max ；Heater Out：5A Max |
 
 ### 4.2 Connectors and jumpers define
+
 Coming soon...
+
 ### 4.3 Pin Definition
+
 <table>
    <tr><td>Features</td><td>Cheetah Pin</td><td>STM32 Pin</td><td>Pin No.</td><td>Comment</td></tr>
    <tr><td rowspan="3">X-MOTOR(1)</td><td>X-Step</td><td>PC0</td><td>8</td><td></td></tr>
@@ -116,8 +119,21 @@ Coming soon...
    <tr><td>SWCLK</td><td>PA14</td><td>49</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
 
+### 4.4 Wiring
 
-## 5. Firmware 
+#### 4.4.1 Bltouch wiring
+
+![](images/cheetah20_wiring_bltouch.png)
+
+klipper config
+
+```
+[bltouch]
+sensor_pin: ^PA0
+control_pin: PB1
+```
+
+## 5. Firmware
 
 ### 5.1 Marlin
 
@@ -190,10 +206,10 @@ Till now(2021/11/30), Klipper don't have boot offset setting for STM32F401 chip,
 
 ![](images/menuconfig.png)
 
-````
+```
 make clean
 make
-````
+```
 
 Then follow the Firmware Upload section instruction below to upload the firmware.
 
@@ -218,16 +234,16 @@ Copy your compiled firmware file ```firmware.bin```(If you use klipper firmware,
 This method works in linux, that means should work in raspberry pi.
 
 1. Enter DFU mode first
-
+   
    - First power off the board
    - Place jumper on BT0 and 3.3V pin![image-20211130182000593](images/boot_jumper.png) 
    - Connect USB cable to the board and your computer 
    - Power up the board with 24v 
 
 2. Make sure dfu-util is installed, shoot `dfu-util --version` command to check.
-
+   
    Sample output:
-
+   
    ```
    dfu-util 0.9
    
@@ -236,26 +252,26 @@ This method works in linux, that means should work in raspberry pi.
    This program is Free Software and has ABSOLUTELY NO WARRANTY
    Please report bugs to http://sourceforge.net/p/dfu-util/tickets/
    ```
-
+   
    If not , you should install it first, use the package manager of your distribution to get the latest version, like
-
+   
    ```
    sudo apt-get install dfu-util
    ```
 
 3. Then use the command below to upload the firmware. You should replace `firmware.bin` below with your built firmware bin file location like `out/klipper.bin`. Change flash address `0x08008000` to bootloader you choosed. (If you use Marlin firmware, you need to set it to `0x08008000`. If you use klipper firmware and you choose boot address `32kiB bootloader` (decribe  [here](#jump52)) when compiling klipper then set it `0x08008000`, if `no Bootloader` , set it `0x08000000`.)
-
+   
    ```
    dfu-util -R -a 0 -s 0x08008000:leave -D firmware.bin
    ```
-   
-5. Remove boot jumper and power-off then power on the board. 
+
+4. Remove boot jumper and power-off then power on the board. 
 
 #### 5.3.3 <span id="jump">Upload the firmware(WINDOWS DFU)</span>
 
 The other way to upload the firmware is using DFU.
 
-##### Step 1. Download stm32cubeprogrammer 
+##### Step 1. Download stm32cubeprogrammer
 
 You can download it from ST website.
 
@@ -269,8 +285,8 @@ Open the STM32CubeProgrammer software.
 
 1. First power off the board
 2. Place jumper on BT0 and 3.3V pin![image-20211130182000593](images/boot_jumper.png) 
-4. Connect USB cable to the board and your computer 
-5. Power up the board with 24v 
+3. Connect USB cable to the board and your computer 
+4. Power up the board with 24v 
 
 Now the board is in DFU mode. 
 
@@ -289,7 +305,7 @@ Do as the red number shows in the screen shot.
 3. Choose the "firmware.bin" file.
 4. If your firmware is `.hex` file, skip this step. Fill in the 'Start address' with (If you use Marlin, set it `0x08008000`. If you use Klipper firmware and you choose boot address `32kiB bootloader` (decribe [here](#jump52)) when compiling klipper then set it `0x08008000`, if `no Bootloader` , set it `0x08000000`.)
 5. Start Programming
-5. Remove boot jumper and power-off then power on the board. 
+6. Remove boot jumper and power-off then power on the board. 
 
 #### 5.3.4 Upload firmware(platformio)
 
@@ -308,8 +324,8 @@ If you compile Marlin yourself with platformio,you can follow the instructions b
 
 ## 6. FAQ
 
-
 To be done...
 
 ## 7. Tech Support
+
 Please submit any technical issue into our [forum](http://forum.fysetc.com/) 
