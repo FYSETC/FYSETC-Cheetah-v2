@@ -83,6 +83,7 @@ Coming soon...
    <tr><td>Y-MIN</td><td>PC8</td><td>39</td><td></td></tr>
    <tr><td>Z-MIN</td><td>PB1</td><td>27</td><td></td></tr>
    <tr><td rowspan="1">PWM</td><td>BLTOUCH/PROBE</td><td>PA0</td><td>14</td><td></td></tr>
+  <tr><td rowspan="1">FIL-DET</td><td>FIL-DET</td><td>PB5</td><td>57</td><td></td></tr>
    <tr><td rowspan="3">FAN</td><td>FAN0</td><td>PA14</td><td>49</td><td></td></tr>
    <tr><td>FAN1</td><td>PA13</td><td>46</td><td></td></tr>
    <tr><td>FAN2</td><td>PA1</td><td>15</td><td></td></tr>
