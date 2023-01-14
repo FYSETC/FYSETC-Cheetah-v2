@@ -120,6 +120,8 @@ Coming soon...
    <tr><td>SWCLK</td><td>PA14</td><td>49</td><td>only used for debugging now and can be used for other purposes.</td></tr>
 </table>
 
+![](images/Cheetah_V2.0_pinout.jpg)
+
 ### 4.4 Wiring
 
 #### 4.4.1 Bltouch wiring
